@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100% ;
+    text-align: center;
+    padding-bottom: 1%;
+    text-decoration: none;
+    
+    }
+
+header {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #24241c;
+}
+
+.menuPaginas{
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60% ;
+}
+
+body {
+    background-color: #EDEDE9;
+}
+
+nav {
+    background-color: #24241c;
+}
+
+
+/* MENÚ PRINCIPAL*/
+
+.menu {
+    align-items: center;
+    padding: 0 80px;
+    display: flex;
+    /* justify-content: baseline;   */
+    /* justify-content: center; */
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0%;
+    justify-content: left;
+}
+
+/* ITEMS MENÚ */
+
+.menu ul li {
+    background-color: #24241c;
+}
+
+/* ENLACES MENÚ */
+
+.menu ul a {
+    display:block;
+    /* color:#fff; */
+    color: black;
+    color: #f1f1f1;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ITEMS DEL MENÚ */
+
+.menu ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+}
+   
+/* EFECTO HOVER */
+   
+.menu ul li:hover {
+    background:#f1f1f1;
+    text-decoration: underline;
+    
+    
+}
+
+/* MENÚ DESPLEGABLE */
+
+.menu ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee; 
+    padding:0;
+    
+}
+
+/* ITEMS MENÚ DESPLEGABLE */
+
+.menu ul ul li {
+    float:none;
+    width:150px;
+    
+}
+
+/* ENLACES ITEMS MENÚ DESPLEGABLE*/
+
+.menu ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+    color: #24241c;
+    
+}
+   
+/* ITEMS MENÚ DESPLEGABLE HOVER */
+
+.menu ul li:hover > ul {
+    display:block;
+    color: black;
+}
+
+/* ---------------IMÁGENES------------- */
+
+#carritoimg {
+     
+    padding-left: 92%;
+    padding-top: 0.8%;
+}
+
+#flechaizq {
+    width: 2%;
+}
+
+#flechader{
+    width: 2%;
+}
+
+#menuimg {
+    /* width: 3%; */
+    padding-left: 2%;
+}
+
+#portada {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#bolsa1{
+    width: 20%;
+}
+
+#bolsa2{
+    width: 20%;    
+}
+
+#bolsa3{
+    max-width: 100%;
+    width: 20%;    
+} 
+
+#print1{
+    max-width: 100%;
+    width: 20%;
+}
+
+#print2{
+    max-width: 100%;
+    width: 20%;    
+}
+
+#print3{
+    max-width: 100%;
+    width: 20%;    
+} 
+
+#print4{
+    max-width: 100%;
+    width: 20%;    
+} 
+
+#print5{
+    max-width: 100%;
+    width: 20%;    
+} 
+
+#print6{
+    max-width: 100%;
+    width: 20%;    
+} 
+
+.galeria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30;
+}
+
+/*TABLET GALERIA PRINTS*/
+
+@media (min-width: 768px) {
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .galeria{
+        grid-template-columns: repeat(3, 1fr);
+       
+    }
+}
+
+
+.galeriabolsas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30;
+}
+
+/*TABLET GALERIA BOLSAS*/
+
+@media (min-width: 768px) {
+    .galeriabolsas{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .galeriabolsas{
+        grid-template-columns: repeat(3, 1fr);
+       
+    }
+}
+
+
+.galeriaremeras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30;
+}
+
+/*TABLET GALERIA REMERAS*/
+
+@media (min-width: 768px) {
+    .galeriaremeras{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .galeriaremeras{
+        grid-template-columns: repeat(3, 1fr);
+       
+    }
+}
