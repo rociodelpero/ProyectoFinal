@@ -18,9 +18,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.navbar-dark .navbar-toggler menuh{
-    color: rgba(255,255,255,.5);
+.menuh{
+    font-size: 15px;
+    border: none;
+    line-height: 0px;
     
+}
+.menuh:focus{
+    text-decoration: none; 
+    outline: 0; 
+    box-shadow: none;
+
 }
 
 .textofooter {
