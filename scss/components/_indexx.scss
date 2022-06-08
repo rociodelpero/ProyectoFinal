@@ -1,0 +1,26 @@
+$tipografiamont: 'Montserrat', sans-serif;
+$colorprincipal: #24241c;
+
+.minavbar {
+    background-color: $colorprincipal;
+    font-family: $tipografiamont;
+    .menuh{
+        font-size: nth($size, 4);
+        border: none;
+        line-height: nth($size , 1);
+    }
+    .menuh:focus{
+        text-decoration: none; 
+        outline: 0; 
+        box-shadow: none;
+    }
+}
+
+
+.micontaineradvertising {
+    background-color: rgba (36,36,28,0.3);
+    color: $colorprincipal;
+    padding: nth($size , 2);
+    font-family: $tipografiamont;
+    font-size: nth($size, 3);
+}

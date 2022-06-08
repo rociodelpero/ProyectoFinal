@@ -1,95 +1,41 @@
-*{
-    padding: 0;
-    margin: 0;
+.mifooter {
+  text-decoration: none;
+  background-color: #24241c;
+}
+.mifooter .mifooter2 {
+  text-decoration: none;
+  background-color: #24241c;
 }
 
-
-
-.section-advertising {
-    background-color: rgba (36,36,28,0.3);
-    color: #ffffff;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
+.mifooter3 {
+  text-decoration: none;
 }
 
-
-.navbar {
-    background-color: #24241c;
-    font-family: 'Montserrat', sans-serif;
+.botonesfooter {
+  color: white;
 }
 
-.menuh{
-    font-size: 15px;
-    border: none;
-    line-height: 0px;
-    
+.minavbar {
+  background-color: #24241c;
+  font-family: "Montserrat", sans-serif;
 }
-.menuh:focus{
-    text-decoration: none; 
-    outline: 0; 
-    box-shadow: none;
-
+.minavbar .menuh {
+  font-size: 15px;
+  border: none;
+  line-height: 0px;
 }
-
-.textofooter {
-    text-decoration: none;
-    color:#ffffff;
+.minavbar .menuh:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
 }
 
-
-.galeria {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
+.micontaineradvertising {
+  background-color: rgba 36, 36, 28, 0.3;
+  color: #24241c;
+  padding: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
 }
 
-/* .galeria img {
-    width: 20%;
-    max-width: 400px;
-    padding: 1rem;
-} */
-/* --------------------------------------------galería--------------- */
-.container.gallery-container {
-    background-color: #fff;
-    color: #35373a;
-    min-height: 100vh;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
-}
-
-
-.tz-gallery {
-    padding: 40px;
-}
-
-.tz-gallery .lightbox img {
-    width: 100%;
-    margin-bottom: 30px;
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-}
-
-
-.tz-gallery .lightbox img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-
-.tz-gallery img {
-    border-radius: 4px;
-}
-
-.baguetteBox-button {
-    background-color: transparent !important;
-}
-
-
-@media(max-width: 768px) {
-    body {
-        padding: 0;
-    }
-
-    .container.gallery-container {
-        border-radius: 0;
-    }
-}
+/*# sourceMappingURL=style.css.map */
