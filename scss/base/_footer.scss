@@ -1,18 +1,43 @@
-.mifooter {
-    text-decoration: none;
-    background-color: #24241c;
+.botonesfooter{ 
+    @include footerBootstrap($colorfondo, $colorletra);
+    @include footerBootstrapp;
+   }
+   
+   
+   
+   
+   
+   // .mifooter {
+//     text-decoration: none;
+//     background-color: #24241c;
 
-    .mifooter2{
-        text-decoration: none;
-        background-color: #24241c;
-    }
+//     .mifooter2{
+//         text-decoration: none;
+//         background-color: #24241c;
+//     }
 
 
-}
-.mifooter3{
-    text-decoration: none;
-}
+// }
+// .mifooter3{
+//     text-decoration: none;
+// }
 
-.botonesfooter{
-    color: white;
-}
+// .botonesfooter{
+//     color: white;
+// }
+
+// .mifooter {
+//     @include footerBootstrap ($colorfondo, $decoration );
+
+//     .mifooter2{
+//         @include footerBootstrap ($colorfondo, $decoration);
+// }}
+
+// .mifooter3{
+//     @include footerBootstrap ($decoration);
+// }
+
+// .botonesfooter{ 
+//     @include footerBootstrap ($colorletra);
+
+// }

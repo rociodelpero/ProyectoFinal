@@ -17,10 +17,19 @@ $colorprincipal: #24241c;
 }
 
 
-.micontaineradvertising {
-    background-color: rgba (36,36,28,0.3);
+// .micontaineradvertising {
+//     background-color: rgba (36,36,28,0.3);
+//     color: $colorprincipal;
+//     padding: nth($size , 2);
+//     font-family: $tipografiamont;
+//     font-size: nth($size, 3);
+// }
+
+.micontaineradversiting {
+    background-color: map-get($micontainer, bg-container);
     color: $colorprincipal;
     padding: nth($size , 2);
     font-family: $tipografiamont;
     font-size: nth($size, 3);
+
 }

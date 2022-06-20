@@ -1,18 +1,13 @@
-.mifooter {
-  text-decoration: none;
-  background-color: #24241c;
-}
-.mifooter .mifooter2 {
-  text-decoration: none;
-  background-color: #24241c;
-}
-
-.mifooter3 {
-  text-decoration: none;
+.galeriabolsas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .botonesfooter {
-  color: white;
+  color: #24241c;
+  background-color: white;
+  text-decoration: none;
 }
 
 .minavbar {
@@ -30,7 +25,7 @@
   box-shadow: none;
 }
 
-.micontaineradvertising {
+.micontaineradversiting {
   background-color: rgba 36, 36, 28, 0.3;
   color: #24241c;
   padding: 5px;

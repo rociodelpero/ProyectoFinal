@@ -1,0 +1,14 @@
+//se le pueden agregar parametros vacios
+
+
+
+
+
+@mixin footerBootstrap ($colorletra, $colorfondo ) {
+    // text-decoration: $decoration;
+    color: $colorletra;
+    background-color: $colorfondo;
+}
+@mixin footerBootstrapp {
+    text-decoration: none;
+}
