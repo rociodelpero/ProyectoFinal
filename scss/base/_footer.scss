@@ -1,18 +1,16 @@
-.mifooter {
-    text-decoration: none;
-    background-color: #24241c;
 
-    .mifooter2{
-        text-decoration: none;
-        background-color: #24241c;
-    }
-
-
+.botonesfooter{ 
+    @include footerBootstrap($colorfondo, $colorletra);
+    @include footerBootstrapp;
+   }
+   
+   
+.mifooter2 {
+  margin-top: 4%;
+  text-decoration: none;
+  background-color: $colorfondo;
 }
-.mifooter3{
-    text-decoration: none;
-}
-
-.botonesfooter{
-    color: white;
-}
+  .mifooter3{
+  text-decoration: none;
+  background-color: $colorfondo;
+ }

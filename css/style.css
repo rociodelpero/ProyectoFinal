@@ -1,18 +1,45 @@
-.mifooter {
-  text-decoration: none;
-  background-color: #24241c;
+.galeriabolsas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.mifooter .mifooter2 {
+
+.botonesfooter {
+  color: #24241c;
+  background-color: white;
+  text-decoration: none;
+}
+
+.mifooter2 {
+  margin-top: 4%;
   text-decoration: none;
   background-color: #24241c;
 }
 
 .mifooter3 {
   text-decoration: none;
+  background-color: #24241c;
 }
 
-.botonesfooter {
-  color: white;
+.cardtitlecentro {
+  font-family: "Montserrat", sans-serif bold;
+  text-align: center;
+}
+
+.cardprecio {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.mirow {
+  margin-top: 1px;
+  margin-bottom: 3px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.micardbody {
+  background-color: rgb(245, 245, 245);
 }
 
 .minavbar {
@@ -36,6 +63,14 @@
   padding: 5px;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+}
+
+.header {
+  margin-top: 0%;
+}
+
+.micarousel {
+  background-color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

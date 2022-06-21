@@ -1,5 +1,9 @@
-@import "./base/footer";
+@import "./base/variables";
 @import "./base/listas";
+@import "./base/extends";
+@import "./base/mixin";
+@import "./base/mapas";
+@import "./base/footer";
 
 @import "./components/bolsas";
 @import "./components/remeras";
