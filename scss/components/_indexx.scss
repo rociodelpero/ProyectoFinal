@@ -16,7 +16,10 @@ $colorprincipal: #24241c;
     }
 }
 
-
+.botoncarrito {
+    background-color: transparent;
+    border: none;
+}
  .micontaineradvertising {
      background-color: rgba (36,36,28,0.3);
      color: $colorprincipal;
@@ -32,4 +35,76 @@ $colorprincipal: #24241c;
 
 .micarousel {
     background-color: black;
+    height: 100%;
+}
+
+
+.section-newsletter-home{
+    padding-top: 50px;
+    margin-bottom: 70px;
+    font-family: $tipografiamont;
+    font-weight: bold;
+}
+
+.h2{
+    text-align: center;
+    font-weight: bold!important;
+}
+ .btnenviar {
+     background-size: 200% 200%;
+     background-image: linear-gradient(to top, #262627 50%, transparent 50%);
+     border-bottom: 3px solid #262627;
+    background-color: $colorprincipal!important;
+     font-weight: bold;
+     transition: all 0.09s ease-in;
+     display: block;
+     margin: 0 auto;
+     padding: 15px 20px 15px 20px;
+
+     position: relative;
+     text-decoration: none;
+     text-align: center;
+     color: #262627;
+     border: 0;
+     cursor: pointer;
+     appearance: none;
+     text-transform: uppercase;
+     background: none;
+     white-space: normal;
+     transition: all 0.4s ease;
+  }
+
+
+.textosection {
+    text-align: center;
+    font-family: $tipografiamont;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+.miform {
+
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 270px;
+    margin-right: 270px;
+}
+
+@media (max-width: 768px) {
+    .body {
+background-color: $colorprincipal;
+    }
+    .miform{
+        display: flex;
+        justify-content: center;
+        display: block;
+        width: 60%;
+       position: relative;
+       margin-left: 120px;
+       
+    }
+    .textosection {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }

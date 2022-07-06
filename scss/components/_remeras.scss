@@ -13,8 +13,49 @@
     margin-bottom: 3px;
     margin-left: 6px;
     margin-right: 6px;
+
 }
 
 .micardbody {
     background-color: rgb(245, 245, 245);
 }
+
+#top {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .btntop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 99;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: gray;
+    color: darkgray;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .btntop:hover {
+    background-color: white;
+  }
+  
+  .hidden-btntop {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: white;
+    cursor: inherit;
+  }
+
+  @media  (max-width: 600px){
+    .btntop {
+        display: none;
+    }
+  }

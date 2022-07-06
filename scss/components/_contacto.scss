@@ -1,0 +1,38 @@
+.myform {
+    margin-inline: 300px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .myform {
+        width: 80%;
+        margin-inline: auto;
+        align-items: center;
+    }
+
+
+
+}
+
+@media only screen and(min-width: 768px) and (max-width: 991px){
+    .myform {
+        width: 80%;
+        margin-inline: auto;
+        align-items: center;
+    }
+}
+
+.btnenviar2 {
+   
+    color: #ffffff!important;
+   width: 16%;
+
+}
+
+.contact{
+    font-family: $tipografiamont;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
