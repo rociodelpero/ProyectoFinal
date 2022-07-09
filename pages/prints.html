@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tienda de diseño independiente platense">
     <meta name="keywords" content="DISEÑO, TIENDADEDISEÑO, TOTEBAGS, DISEÑOLAPLATA, EMPRENDIMIENTODEDISEÑO">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
     <title>Prints</title>
@@ -42,7 +38,7 @@
           </button>
           <a class="navbar-brand" href="../index.html">Tienda</a>
       
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+          <svg class="micarrito" xmlns="http://www.w3.org/2000/svg"  class="micarrito bi bi-cart" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>
       
@@ -165,40 +161,34 @@
 <!-- -----------------------------------------------------------------------------FOOTER------------------------------------- -->
 <div class=" mifooter2 ">
   <footer class="mifooter  text-center text-white">
-  <div class="container p-4 pb-0">
-    <section class="mb-4">
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/tecabag/" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/manoliwalde/" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/martinapiccoli_/" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-    </section>
-    <!-- Section: Redes sociales -->
-  </div>
-  <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/tecabag/" role="button">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/manoliwalde/" role="button">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/martinapiccoli_/" role="button">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+    </div>
   <hr>
-  <!-- Copyright -->
-  <div class="text-center p-3">
-    <a class="nombre text-white" > Hecho por Rocío Del Pero</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-  </div>
+     <div class="text-center p-3">
+        <a class="nombre text-white" > Hecho por Rocío Del Pero</a>
+     </div>
+  </footer>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
+    <script>
+      window.addEventListener("load", function(event) {
+      document.getElementsByClassName("disclaimer")[0].remove();
+      console.log("Eliminado!");
+      });
+    </script>
   </body>
