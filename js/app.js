@@ -128,16 +128,6 @@ const productos = [
 console.log ( productos )
 
 
-alert ("¿Querés comprar un producto?")
-let compra = prompt("Elegí un número del 1 al 24")
-
-// if ( compra == 1,2,3,4,5,6,7,8,9 ) {
-//     let numero1 = prompt("ingresá el primer dígito para sumar");
-//     let numero2 = prompt("ingresá el segundo número para sumar");
-//     resultado = sumar (numero1,numero2);
-//     alert(`el total es $ ${resultado}`)
-//     respuestaUsuario = prompt ("Querés seguir?")
-// }
 
 ////////////////////////////////////////////
 const agregarAlCarrito = (id) => {
@@ -146,18 +136,13 @@ const agregarAlCarrito = (id) => {
 }
 
 agregarAlCarrito (1)
-agregarAlCarrito (2)
+
 
 console.log (carrito)
 
 
 /////////////////////////////
 
-// const miCompra = [
-//     { nombre: 'Desarrollo Web', precio: 20000 },
-//     { nombre: 'Javascript', precio: 18750 },
-//     { nombre: 'ReactJS', precio: 27500 }
-// ]
 
 const total = productos.reduce((acc, el) => acc + el.precio, 0)
 console.log(total) 
@@ -165,5 +150,5 @@ console.log(total)
 ////////////////////////////////
 
 const calcularTotal = () => {
-    const total = productos
+    // const total = 
 }
