@@ -152,3 +152,48 @@ console.log(total)
 const calcularTotal = () => {
     // const total = 
 }
+
+///                   EVENTOS                  ///
+
+// const botonenviar = document.getElementById("bboton")
+//     botonenviar.addEventListener("click", respuestaClick)
+
+//      function respuestaClick(){
+//       console.log("Respuesta evento");
+// }
+
+const modalContainer = document.querySelector ('#modal-container')
+const abrirModal = document.querySelector ('#bboton')
+const cerrarModal = document.querySelector ('#cerrar-modal')
+
+abrirModal.addEventListener ('click', () => {
+    modalContainer.classList.add('modal-container-active')
+})
+
+cerrarModal.addEventListener('click', () => {
+    modalContainer.classList.remove('modal-container-active')
+})
+
+const inputMail = document.querySelector ('#input-mail') 
+
+//console.log (inputMail.value)
+
+inputMail.addEventListener('input', () => {
+    console.log (inputMail.value)
+})
+
+//validar email
+function validar () {
+let expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+let email = document.form1.email.value;
+if (!expresion.test(email)){
+    todo_correcto = false;
+}
+
+
+if(!todo_correcto){
+    alert('No escribiste correctamente el mail, volvé a probar');
+    }
+    
+    return todo_correcto;
+    }
