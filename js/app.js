@@ -1,199 +1,149 @@
 
-//CARRITO DE PRODUCTOS 
+const contenedorProductos = document.getElementById('contenedor-productos')
 
-//array de carrito vacío
-const carrito = []
+const contenedorCarrito = document.getElementById('carrito-contenedor')
 
+const botonVaciar = document.getElementById('vaciar-carrito')
 
-const productos = [
-    {
-        id: 1,
-        nombre: "Remera Avant",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 2,
-        nombre: "Remera Escarabajo",
-        precio: 3000,
-        talle: "S"
-    },
-    {
-        id: 3,
-        nombre: "Remera Espejo",
-        precio: 3000,
-        talle: "M"
-    },
-    {
-        id: 4,
-        nombre: "Remera Chiru",
-        precio: 3000,
-        talle: "XS"
-    },
-    {
-        id: 5,
-        nombre: "Remera Estampa",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 6,
-        nombre: "Remera Astromutante",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 7,
-        nombre: "Remera Cuánto",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 8,
-        nombre: "Remera Field",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 9,
-        nombre: "Remera Dentadura",
-        precio: 3000,
-        talle: "L"
-    },
-    {
-        id: 10,
-        nombre: "Print notas",
-        precio: 1000,
-    },    {
-        id: 11,
-        nombre: "Print sed",
-        precio: 1000,
-    },    {
-        id: 12,
-        nombre: "Print aldea",
-        precio: 1000,
-    },    {
-        id: 13,
-        nombre: "Print noctambul",
-        precio: 1000,
-    },    {
-        id: 14,
-        nombre: "Print gato",
-        precio: 1000,
-    },    {
-        id: 15,
-        nombre: "Print arribo",
-        precio: 1000,
-    },    {
-        id: 16,
-        nombre: "Print avant",
-        precio: 1000,
-    },    {
-        id: 17,
-        nombre: "Print cuánto",
-        precio: 1000,
-    },    {
-        id: 18,
-        nombre: "Print escarabajo",
-        precio: 1000,
-    },    {
-        id: 19,
-        nombre: "Bolsa mano",
-        precio: 2000,
-    },    {
-        id: 20,
-        nombre: "Bolsa verde",
-        precio: 2000,
-        talle: "L"
-    },    {
-        id: 21,
-        nombre: "Bolsa roja",
-        precio: 2000,
-    },    {
-        id: 22,
-        nombre: "Bolsa vinilo",
-        precio: 2000,
-    },    {
-        id: 23,
-        nombre: "Bolsa negra",
-        precio: 2000,
-    },    {
-        id: 24,
-        nombre: "Bolsa lienzo",
-        precio: 2000,
+const contadorCarrito = document.getElementById('contadorCarrito')
+
+const precioTotal = document.getElementById('precioTotal')
+
+let carrito = []
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        actualizarCarrito()
     }
-   
-]
+})
 
-console.log ( productos )
+botonVaciar.addEventListener('click', () => {
+    carrito.length = 0
+    actualizarCarrito ()
+})
+
+
+stockProductos.forEach((producto) => {
+    const div = document.createElement ('div')
+    div.classList.add('producto')
+    div.innerHTML = `
+    <img src=${producto.img} alt= "">
+    <h3>${producto.nombre} </3>
+    <p>Talle: ${producto.talle}</p>
+    <p class="precioProducto"> Precio: $${producto.precio}</p>
+    <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class= "fas fa-shopping-cart"> </i> </button>
+    `
+
+    contenedorProductos.appendChild(div)
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
+    const boton = document.getElementById(`agregar${producto.id}`)
+
+    boton.addEventListener ('click', () => {
+        agregarAlCarrito(producto.id)
+    })
+})
 
 
 
-////////////////////////////////////////////
-const agregarAlCarrito = (id) => {
-    const producto = productos.find ( (prod) => prod.id ===id )
-    carrito.push (producto)    
+//función q trae prod que coincida con id q reciba por parámetro
+const agregarAlCarrito = (prodId) => {
+    const existe = carrito.some (prod => prod.id === prodId)
+    
+    if (existe) {
+        const prod = carrito.map (prod => {
+            if (prod.id === prodId) {
+                prod.cantidad++
+            }
+        })
+    } else {
+
+    const item = stockProductos.find((prod) => prod.id === prodId)
+    carrito.push(item)
+    console.log(carrito)
+}
+actualizarCarrito()
 }
 
-agregarAlCarrito (1)
 
-
-console.log (carrito)
-
-
-/////////////////////////////
-
-
-const total = productos.reduce((acc, el) => acc + el.precio, 0)
-console.log(total) 
-
-////////////////////////////////
-
-const calcularTotal = () => {
-    // const total = 
+//Vaciar carrito
+const eliminarDelCarrito = (prodId) => {
+    const item = carrito.find ((prod) => prod.id === prodId)
+    const indice = carrito.indexOf(item)
+    carrito.splice(indice, 1)
+    actualizarCarrito()
 }
 
-///                   EVENTOS                  ///
 
-// const botonenviar = document.getElementById("bboton")
-//     botonenviar.addEventListener("click", respuestaClick)
+const actualizarCarrito = () => {
+    contenedorCarrito.innerHTML = ""
 
-//      function respuestaClick(){
-//       console.log("Respuesta evento");
+    carrito.forEach((prod) => {
+        const div = document.createElement('div')
+        //agregar clase al css
+        div.className = ('productoEnCarrito')
+        div.innerHTML = `
+        <p>${prod.nombre}</p>
+        <p>Precio: ${prod.precio}</p>
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <button onclick = "eliminarDelCarrito (${prod.id})" class= "boton-eliminar"><i class= "fas fa-trash-alt"> </i> </button>
+        `
+        contenedorCarrito.appendChild(div)
+    })
+    contadorCarrito.innerText = carrito.length
+    precioTotal.innerText = carrito.reduce ((acc, prod) => acc + prod.precio, 0)
+}
+
+
+
+
+
+
+
+
+// ///                   EVENTOS                  ///
+
+// // const botonenviar = document.getElementById("bboton")
+// //     botonenviar.addEventListener("click", respuestaClick)
+
+// //      function respuestaClick(){
+// //       console.log("Respuesta evento");
+// // }
+
+// const modalContainer = document.querySelector ('#modal-container')
+// const abrirModal = document.querySelector ('#bboton')
+// const cerrarModal = document.querySelector ('#cerrar-modal')
+
+// abrirModal.addEventListener ('click', () => {
+//     modalContainer.classList.add('modal-container-active')
+// })
+
+// cerrarModal.addEventListener('click', () => {
+//     modalContainer.classList.remove('modal-container-active')
+// })
+
+// const inputMail = document.querySelector ('#input-mail') 
+
+// //console.log (inputMail.value)
+
+// inputMail.addEventListener('input', () => {
+//     console.log (inputMail.value)
+// })
+
+// //validar email
+// function validar () {
+// let expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+// let email = document.form1.email.value;
+// if (!expresion.test(email)){
+//     todo_correcto = false;
 // }
 
-const modalContainer = document.querySelector ('#modal-container')
-const abrirModal = document.querySelector ('#bboton')
-const cerrarModal = document.querySelector ('#cerrar-modal')
 
-abrirModal.addEventListener ('click', () => {
-    modalContainer.classList.add('modal-container-active')
-})
-
-cerrarModal.addEventListener('click', () => {
-    modalContainer.classList.remove('modal-container-active')
-})
-
-const inputMail = document.querySelector ('#input-mail') 
-
-//console.log (inputMail.value)
-
-inputMail.addEventListener('input', () => {
-    console.log (inputMail.value)
-})
-
-//validar email
-function validar () {
-let expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
-let email = document.form1.email.value;
-if (!expresion.test(email)){
-    todo_correcto = false;
-}
-
-
-if(!todo_correcto){
-    alert('No escribiste correctamente el mail, volvé a probar');
-    }
+// if(!todo_correcto){
+//     alert('No escribiste correctamente el mail, volvé a probar');
+//     }
     
-    return todo_correcto;
-    }
+//     return todo_correcto;
+//     }
