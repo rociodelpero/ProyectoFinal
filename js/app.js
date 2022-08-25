@@ -63,7 +63,10 @@ const agregarAlCarrito = (prodId) => {
     const item = stockProductos.find((prod) => prod.id === prodId)
     carrito.push(item)
     console.log(carrito)
+    toastAgrego()
+    
 }
+//toastAgrego()
 actualizarCarrito()
 }
 
@@ -72,7 +75,10 @@ actualizarCarrito()
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find ((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
+
     carrito.splice(indice, 1)
+
+    toastSaco()
     actualizarCarrito()
 }
 
@@ -96,8 +102,24 @@ const actualizarCarrito = () => {
     precioTotal.innerText = carrito.reduce ((acc, prod) => acc + prod.precio, 0)
 }
 
+//librerías 
+const toastAgrego = () => {
+    Toastify ({
+        text: 'Se agregó un producto al carrito',
+        time: 2000,
+        gravity: 'bottom',
+        position: 'left'
+    }).showToast()
+}
 
-
+const toastSaco = () => {
+    Toastify ({
+        text:'Se eliminó el producto del carrito',
+        time: 2000,
+        gravity: 'bottom',
+        position: 'right'
+    }).showToast()
+}
 
 
 
