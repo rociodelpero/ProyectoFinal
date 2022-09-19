@@ -5,11 +5,16 @@ const contenedorCarrito = document.getElementById('carrito-contenedor')
 
 const botonVaciar = document.getElementById('vaciar-carrito')
 
+const botonComprar = document.getElementById('boton-comprar')
+
 const contadorCarrito = document.getElementById('contadorCarrito')
 
 const precioTotal = document.getElementById('precioTotal')
 
-let carrito = []
+
+
+ let carrito = []
+
 
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
@@ -18,22 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-botonVaciar.addEventListener('click', () => {
-    carrito.length = 0
-    actualizarCarrito ()
-})
 
 
 stockProductos.forEach((producto) => {
     const div = document.createElement ('div')
     div.classList.add('producto')
     div.innerHTML = `
-    <img src=${producto.img} alt= "">
-    <h3>${producto.nombre} </3>
-    <p>Talle: ${producto.talle}</p>
-    <p class="precioProducto"> Precio: $${producto.precio}</p>
-    <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class= "fas fa-shopping-cart"> </i> </button>
-    `
+                    <div class="carddd card">
+                    <img src=${producto.img} alt= "">
+                    <h3 class="cardtitlecentro card-title">${producto.nombre} </3>
+                    <p>Talle: ${producto.talle}</p>
+                    <p class="cardPrecio">  $${producto.precio}</p>
+                    <button id="agregar${producto.id}" class="boton-agregar"> <i class= "fas fa-shopping-cart"> </i> </button>
+                    </div>
+                    `
 
     contenedorProductos.appendChild(div)
 
@@ -48,7 +51,7 @@ stockProductos.forEach((producto) => {
 
 
 
-//función q trae prod que coincida con id q reciba por parámetro
+//función que trae prod que coincida con id que recibe por parámetro
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some (prod => prod.id === prodId)
     
@@ -63,10 +66,9 @@ const agregarAlCarrito = (prodId) => {
     const item = stockProductos.find((prod) => prod.id === prodId)
     carrito.push(item)
     console.log(carrito)
-    toastAgrego()
-    
-}
-//toastAgrego()
+    }
+
+toastAgrego()
 actualizarCarrito()
 }
 
@@ -74,21 +76,50 @@ actualizarCarrito()
 //Vaciar carrito
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find ((prod) => prod.id === prodId)
-    const indice = carrito.indexOf(item)
 
+    item.cantidad -= 1
+
+    if (item.cantidad === 0) {
+    const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
+    }
+    else if (carrito.length == 0){
+    contenedorModal.remove()
+    Swal.fire('No hay productos en el carrito')
+    }
+
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 
     toastSaco()
     actualizarCarrito()
 }
 
+botonVaciar.addEventListener('click', () => {
+    
+    carrito.length = 0 
+    Swal.fire('No hay productos en el carrito')
+    contenedorModal.remove()
+    actualizarCarrito ()    
+})
+
+botonAbrir.addEventListener('click', () => {
+    if (carrito.length == 0) {
+       //contenedorModal.removeChild(modalCarrito)
+       Swal.fire('No hay productos en el carrito')
+         contenedorModal.remove()
+   } else {
+    document.body.append(contenedorModal)
+    console.log('no esta  funcando');
+   }
+})
+
 
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = ""
-
-    carrito.forEach((prod) => {
+      
+        carrito.forEach((prod) => {
         const div = document.createElement('div')
-        //agregar clase al css
         div.className = ('productoEnCarrito')
         div.innerHTML = `
         <p>${prod.nombre}</p>
@@ -97,10 +128,16 @@ const actualizarCarrito = () => {
         <button onclick = "eliminarDelCarrito (${prod.id})" class= "boton-eliminar"><i class= "fas fa-trash-alt"> </i> </button>
         `
         contenedorCarrito.appendChild(div)
+
+    
     })
-    contadorCarrito.innerText = carrito.length
-    precioTotal.innerText = carrito.reduce ((acc, prod) => acc + prod.precio, 0)
+
+
+    contadorCarrito.innerText = carrito.reduce((acc,prod) => acc += prod.cantidad,0)
+    precioTotal.innerText = carrito.reduce ((acc, prod) => acc + prod.precio * prod.cantidad, 0)
 }
+
+
 
 //librerías 
 const toastAgrego = () => {
@@ -121,59 +158,8 @@ const toastSaco = () => {
     }).showToast()
 }
 
-/// FETCH
-
-fetch('/data.json')
-    .then ( (resp) => resp.json())
-    .then ( (data) => {
-
-        console.log(data)
-
-    })
 
 
-
-// ///                   EVENTOS                  ///
-
-// // const botonenviar = document.getElementById("bboton")
-// //     botonenviar.addEventListener("click", respuestaClick)
-
-// //      function respuestaClick(){
-// //       console.log("Respuesta evento");
-// // }
-
-// const modalContainer = document.querySelector ('#modal-container')
-// const abrirModal = document.querySelector ('#bboton')
-// const cerrarModal = document.querySelector ('#cerrar-modal')
-
-// abrirModal.addEventListener ('click', () => {
-//     modalContainer.classList.add('modal-container-active')
-// })
-
-// cerrarModal.addEventListener('click', () => {
-//     modalContainer.classList.remove('modal-container-active')
-// })
-
-// const inputMail = document.querySelector ('#input-mail') 
-
-// //console.log (inputMail.value)
-
-// inputMail.addEventListener('input', () => {
-//     console.log (inputMail.value)
-// })
-
-// //validar email
-// function validar () {
-// let expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
-// let email = document.form1.email.value;
-// if (!expresion.test(email)){
-//     todo_correcto = false;
-// }
+actualizarCarrito()
 
 
-// if(!todo_correcto){
-//     alert('No escribiste correctamente el mail, volvé a probar');
-//     }
-    
-//     return todo_correcto;
-//     }

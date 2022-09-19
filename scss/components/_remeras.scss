@@ -1,11 +1,15 @@
 .cardtitlecentro {
-    font-family: $tipografiamont bold;
-    text-align: center;
-}
-
-.cardprecio{
     font-family: $tipografiamont;
     text-align: center;
+    font-size: 17.5px;
+    background-color: rgb(243, 243, 243);
+    padding: 8px;
+}
+
+.cardPrecio{
+    font-family: $tipografiamont;
+    text-align: center;
+    font-size: 15px;
 }
 
 
@@ -19,6 +23,10 @@
 
 .micardbody {
     background-color: rgb(245, 245, 245);
+}
+
+.carddd {
+  background-color: rgb(243, 243, 243);
 }
 
 #top {

@@ -52,13 +52,17 @@
 }
 
 .cardtitlecentro {
-  font-family: "Montserrat", sans-serif bold;
-  text-align: center;
-}
-
-.cardprecio {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  font-size: 17.5px;
+  background-color: rgb(243, 243, 243);
+  padding: 8px;
+}
+
+.cardPrecio {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 15px;
 }
 
 .mirow {
@@ -70,6 +74,10 @@
 
 .micardbody {
   background-color: rgb(245, 245, 245);
+}
+
+.carddd {
+  background-color: rgb(243, 243, 243);
 }
 
 #top {
@@ -129,6 +137,17 @@
 .botoncarrito {
   background-color: transparent;
   border: none;
+}
+
+#boton-carrito {
+  background-color: transparent;
+  border: none;
+}
+
+#contadorCarrito {
+  font-family: "Montserrat";
+  color: white;
+  font-size: 12px;
 }
 
 .micarrito {
@@ -235,6 +254,124 @@
 .modal-container-active {
   opacity: 1;
   visibility: visible;
+}
+
+.modal-contenedor {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-carrito {
+  position: relative;
+  background-color: white;
+  min-width: 500px;
+  padding: 20px;
+  margin-top: -100%;
+  transition: all 0.5s;
+  border-radius: 13px;
+}
+
+.modal-active .modal-carrito {
+  margin-top: 0;
+}
+
+.modal-carrito h3 {
+  color: #262627;
+  padding-bottom: 5px;
+}
+
+.modal-carrito #carritoCerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: #262627;
+  border: none;
+  background-color: white;
+}
+
+.modal-carrito #carritoCerrar:hover {
+  cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+  outline: none;
+}
+
+.modal-carrito .precioProducto {
+  padding-top: 10px;
+}
+
+.boton-eliminar {
+  background-color: white;
+  color: red;
+  border: none;
+  font-size: 20px;
+}
+
+.boton-eliminar:hover {
+  cursor: pointer;
+}
+
+.boton-eliminar:focus {
+  outline: none;
+}
+
+.productoEnCarrito {
+  border-left: 5px solid lightblue;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productoEnCarrito:hover {
+  border-left: 5px solid #262627;
+}
+
+.boton-agregar {
+  background-color: #262627;
+  color: white;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.boton-comprar {
+  background-color: #262627;
+  color: white;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 300px;
+}
+
+.boton-agregar:hover {
+  cursor: pointer;
+}
+
+.boton-agregar:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */
